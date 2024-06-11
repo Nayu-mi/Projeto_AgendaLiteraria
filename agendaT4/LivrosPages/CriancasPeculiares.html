@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Lar Da Srta. Peregrine Para Crianças Peculiares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+           <!--Menu hamburguer e barra de pesquisa-->
+           <nav role="navigation">
+               <div id="menuToggle">
+                   <input type="checkbox">
+       
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   
+                   <ul id="menu">
+                       <a href="../mainPage/mainpage.html"><li class="pular">Inicio</li></a>
+                       <a href="../DashboardPage/dashboardPage.html"><li>Dashboard</li></a>
+                       <a href="../sobreNosPage/sobrenos.html"><li>Sobre nós</li></a>
+                    <a href="../BibliotecasPage/biblioteca.html"><li>Bibliotecas de SP</li></a>
+                   </ul>
+               </div>
+           </nav>
+       </header>
+           <br><br>
+       <main>
+   
+           <div class="central">
+   
+               <div class="box">
+   
+                   <div class="cima">
+   
+                       <img src="../capas/CriancasPeculiares.png" alt="O Lar da Srta. Perefrine para Crianças Peculiares">
+                       <h2>O Lar da Srta. Perefrine para Crianças Peculiares</h2>
+                       <h3>Ransom Riggs</h3>
+   
+                   </div>
+   
+                   <div class="baixo">
+   
+                       <br><br>
+                       <h4>Sinopse:</h4>
+                       <br>
+                       <h5>
+                            Jacob Portman cresceu ouvindo as histórias fantásticas que o avô Abe contava.
+                       </h5>
+                       <p>
+                        Na época da Segunda Guerra Mundial, o avô havia morado numa ilha remota, num casarão que funcionava como abrigo para 
+                        crianças. Lá, Abe convivera com uma menina que levitava, uma garota que produzia fogo com as mãos, um menino invisível… 
+                        Entretanto, todas essas histórias foram perdendo o encanto à medida que Jacob crescia. Até que, aos dezesseis anos, 
+                        tudo volta à tona para se provar real.
+                        <br>
+                        Abalado com a morte misteriosa do avô, Jacob decide ir à tal ilha para tentar entender as últimas palavras de Abe: 
+                        “Encontre a ave. Na fenda. Do outro lado do túmulo do velho.” Ele encontra o casarão em ruínas, mas, ao passar por um 
+                        túnel subterrâneo, ele se vê em outra época, décadas atrás: em 3 setembro de 1940. Naquele lugar protegido no tempo, ele 
+                        conhece crianças com habilidades peculiares e encontra as respostas para todas as suas perguntas. Mas o fascínio inicial 
+                        logo se transforma em uma luta pela sobrevivência e para salvar a vida de seus novos amigos.
+                        <br>
+                        Viagens no tempo, mulheres que se transformam em aves, crianças com dons inusitados e monstros à espreita. Bem-vindo ao 
+                        lar da srta. Peregrine para crianças peculiares, um fascinante mundo novo pronto para ser descoberto.
+                           
+                       </p>
+   
+                   </div>
+
+                   <div class="btn">
+                        <h5>Adicionar a Lista de:</h5>
+                        <div class="ldash-container">
+                            <form action="../adicionar_livro.php" method="post">
+                                <input type="hidden" name="id_livro" value="5">
+                                <input type="hidden" name="lista" value="JaLi">
+                                <button type="submit" class="ldash">Já li...</button>
+                            </form>
+                            <form action="../adicionar_livro.php" method="post">
+                                <input type="hidden" name="id_livro" value="5">
+                                <input type="hidden" name="lista" value="EstouLendo">
+                                <button type="submit" class="ldash2">Estou Lendo...</button>
+                            </form>
+                            <form action="../adicionar_livro.php" method="post">
+                                <input type="hidden" name="id_livro" value="5">
+                                <input type="hidden" name="lista" value="QueroLer">
+                                <button type="submit" class="ldash3">Quero Ler...</button>
+                            </form>
+                        </div>
+                    </div>
+   
+               </div>
+           
+           
+           </div>
+   
+       </main>
+       <footer class="footer">
+            <div class="foot">
+                <p>
+                    &copy; 2024 all rights reserved
+                </p>
+            </div>
+        </footer>
+       
+    
+</body>
+</html>

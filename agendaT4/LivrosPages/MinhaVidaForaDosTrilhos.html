@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Vida Fora Dos Trilhos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainPage/mainpage.html"><li class="pular">Inicio</li></a>
+                    <a href="../DashboardPage/dashboardPage.html"><li>Dashboard</li></a>
+                    <a href="../sobreNosPage/sobrenos.html"><li>Sobre nós</li></a>
+                    <a href="../BibliotecasPage/biblioteca.html"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/MinhaVidaForaDosTrilhos.png" alt="Minha Vida Fora dos Trilhos">
+                    <h2>Minha Vida Fora Dos Trilhos</h2>
+                    <h3>Claire Vanderpool</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Embarque no Trem:
+                    </h5>
+                    <p>
+                        A protagonista de MINHA VIDA FORA DOS TRILHOS, Abilene Tucker, tem apenas 12 anos, mas é corajosa e impetuosa 
+                        o suficiente para encontrar aventuras na pequena cidade de Manifest, Kansas, um fim de mundo para onde seu pai a 
+                        enviou de trem a fim de passar o verão sob a tutela de um velho conhecido enquanto ele trabalha em uma ferrovia.
+                        <br>
+                        O que parecia ser o período mais solitário e entediante de sua vida ganha um novo e surpreendente rumo quando 
+                        Abilene encontra uma velha caixa de charutos com cartas antigas e pequenas lembranças de outros tempos. Aos olhos 
+                        curiosos da menina, a caixa se torna uma verdadeira arca do tesouro, onde segredos enterrados conectam dois momentos 
+                        da cidade. A partir de então, o livro se divide em duas narrativas cronológicas: passado e presente se misturam, 
+                        daquela maneira mágica que só um bom livro consegue contar.
+                        <br>
+                        Os acontecimentos vão da época da Primeira Guerra Mundial à Grande Depressão norte- americana dos anos 1930, 
+                        com soberba fidelidade histórica que ajudam a construir esta narrativa de perda e redenção.
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="14">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="14">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="14">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

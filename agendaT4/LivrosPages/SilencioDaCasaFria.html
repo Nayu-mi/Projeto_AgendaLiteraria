@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Silêncio Da Casa Fria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainPage/mainpage.html"><li class="pular">Inicio</li></a>
+                    <a href="../DashboardPage/dashboardPage.html"><li>Dashboard</li></a>
+                    <a href="../sobreNosPage/sobrenos.html"><li>Sobre nós</li></a>
+                    <a href="../BibliotecasPage/biblioteca.html"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/SilencioDaCasaFria.png" alt="O Silêncio da Casa Fria">
+                    <h2>O Silêncio da Casa Fria</h2>
+                    <h3>Laura Purcell</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Algumas portas devem permanecer trancadas.
+                        
+                    </h5>
+                    <p>
+                        Quando Elsie perdeu o marido apenas algumas semanas após o casamento, achou que já tinha sofrido o suficiente para uma 
+                        vida inteira. Praticamente sozinha em uma casa enorme e isolada, ela jamais imaginou que os companheiros silenciosos &ndash; 
+                        painéis de madeira que imitavam pessoas em atividades cotidianas  &ndash;, um dia, seguiriam seus movimentos com os 
+                        olhinhos pintados. Muito menos que eles apareceriam por conta própria em cômodos aleatórios…
+                        <br>
+                        Com a atmosfera lúgubre típica das histórias de fantasma vitorianas, O Silêncio da Casa Fria honra os 
+                        melhores contos góticos. A história de uma mulher confrontada com um medo irracional, que coloca em xeque sua própria 
+                        sanidade. Estaria Elsie vendo coisas como forma de dar sentido ao luto? Ou realmente havia algo sobrenatural morando sob 
+                        o mesmo teto que ela?
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="21">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="21">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="21">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

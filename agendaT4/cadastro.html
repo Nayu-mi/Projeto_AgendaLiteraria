@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <!--<script src="cadscript.js" defer></script>-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <main>
+        
+        <div class="cadastro">
+
+            <form action="processa_cadastro.php" method="post" id="cadastroForm">
+                <fieldset>
+                    <legend>Cadastro</legend>
+
+                    <p>Preencha o Formulário e faça seu Cadastro!</p>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="">
+                                Nome completo: <br>
+                                <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Digite seu Nome">
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label for="">
+                                Data de nascimento: <br>
+                                <input type="date" id="dataNascimento" name="dataNascimento"> 
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="">
+                                Nome de usuário: <br>
+                                <input type="text" id="username" name="username" placeholder="Digite um nome de usuario">
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label for="">
+                                Endereço de e-mail: <br>
+                                <input type="email" id="email" name="email" placeholder="Digite seu email">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="senha">
+                                Senha: <br>
+                                <input type="password" name="senha" class="senha-olho" placeholder="Digite sua senha" id="senha">
+                                <i class="fa-solid fa-eye" onclick="togglePasswordVisibility()"></i>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label for="">
+                                Confirme sua Senha: <br>
+                                <input type="password" class="senha-olho" placeholder="Confirme sua senha" id="senha">
+                                
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            Você aceita nossos termos?<br>
+                            <label class="checkbox-container">Aceito os termos
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col">
+                            <input type="submit" class="btncad" value="Cadastro">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leve-me Com Você</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainPage/mainpage.html"><li class="pular">Inicio</li></a>
+                    <a href="../DashboardPage/dashboardPage.html"><li>Dashboard</li></a>
+                    <a href="../sobreNosPage/sobrenos.html"><li>Sobre nós</li></a>
+                    <a href="../BibliotecasPage/biblioteca.html"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/LeveMeComVoce.png" alt="Leve-me com Você">
+                    <h2>Leve-me Com Você</h2>
+                    <h3>Catherine Ryan Hyde</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Esqueça todas as histórias que você já leu sobre as férias de verão. <br> Troque as praias paradisíacas pelos tons terrosos das reservas naturais americanas, 
+                        as cadeiras e protetores solares por um trailer e um pacote de marshmallows, e abra bem os olhos para observar as estrelas com August, Seth e Henry, 
+                        o trio improvável e inesquecível de LEVE-ME COM VOCÊ.
+                    </h5>
+                    <p>
+                        August Shroeder é um professor de ciências desacreditado e um alcoólatra em recuperação. Todos os anos, seu destino nas férias de verão é o mesmo: a estrada. 
+                        Em seu trailer, ele percorre quilômetros e mais quilômetros nas rodovias para visitar os belíssimos parques e reservas naturais. Seu plano era visitar o Parque 
+                        Nacional Yellowstone com seu filho, Phillip, mas agora não há ninguém no banco do passageiro &ndash; apenas um punhado de cinzas guardado no porta-luvas, 
+                        em uma garrafa de chá carregada de significado.
+                        <br>
+                        Quando o trailer quebra, August busca conserto na oficina mais próxima. Mas, além do motor home pronto para seguir viagem, ele sai de lá com dois garotos 
+                        a tiracolo &ndash; seus novos companheiros nessa road trip &ndash; e a chance de repaginar uma viagem que tinha tudo para ser melancólica e permeada por 
+                        lembranças doloridas.
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="13">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="13">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="13">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    font-family: "Tilt Neon", sans-serif;
+    background-color: #94A684;
+    line-height: 1.5;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.central{
+    padding: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.box{
+    background-color: #E4E4D0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+h3{
+    color: #FFEEF4;
+    font-size: 60px;
+    margin-bottom: -20px;
+    text-align: center;
+}
+
+p{
+    color: #000;
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+h4{
+    color: #005c49;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+/*rodapé*/
+.footer{
+    margin-top: auto;
+}
+.foot{
+    padding: 10px 0px;
+    background-color: #AEC3AE;
+    margin-bottom: 0;
+}
+.foot p{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 35px;
+}
+
+/* menu toggle*/
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a{
+    text-decoration: none;
+    color: #005c49;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover{
+    color: #0d7e65; 
+}
+
+#menuToggle input{
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #005c49;
+    border-radius: 3px;
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child{
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2){
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #005c49; /**/
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu{
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    background: #ffcbdbb2; /*#ede*/
+    list-style-type: none;
+    
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li{
+    padding: 10px 0;
+    font-size: 22px;
+}
+/*classe pular - para ter um espaço entre o X e as páginas na lista*/
+.pular{
+    margin-top: 50px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+/* Fim do menu toggle */
+
+/* Estilos padrão */
+
+/* Media query para dispositivos com largura máxima de 768px (exemplo de tablet) */
+@media only screen and (max-width: 768px) {
+    .central {
+        padding: 30px; /* Reduzir o padding */
+    }
+
+    .box {
+        max-width: 100%; /* Alterar a largura máxima para ocupar toda a largura disponível */
+    }
+
+    h3 {
+        font-size: 30px; /* Reduzir o tamanho da fonte do título */
+        margin-left: 0; /* Remover a margem esquerda do título */
+    }
+
+    p {
+        font-size: 14px; /* Reduzir o tamanho da fonte do parágrafo */
+    }
+
+}
+
+/* Media query para dispositivos com largura máxima de 480px (exemplo de dispositivo móvel) */
+@media only screen and (max-width: 480px) {
+    .central {
+        padding: 20px; /* Reduzir ainda mais o padding */
+    }
+
+    .box {
+        padding: 20px; /* Reduzir o padding interno do box */
+    }
+
+    h3 {
+        font-size: 24px; /* Reduzir ainda mais o tamanho da fonte do título */
+    }
+
+    p {
+        font-size: 12px; /* Reduzir ainda mais o tamanho da fonte do parágrafo */
+    }
+}
