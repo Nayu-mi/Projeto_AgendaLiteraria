@@ -20,7 +20,13 @@
                     <a href="dashboardPage.php"><li>Dashboard</li></a>
                     <a href="sobrenos.html"><li>Sobre nós</li></a>
                     <a href="biblioteca.html"><li>Bibliotecas de SP</li></a>
+                    <a href="alterarCadastro.html"><li>Alterar Cadastro</li></a>
                 </ul>
+            </div>
+            <div class="sessao">
+                <form action="" class="sessao">
+                    <p class="user">Bem Vindo(a), user &nbsp; <button class="btnBye">Sair</button></p>  
+                </form>
             </div>
         </nav>
     </header>
