@@ -18,7 +18,7 @@ body{
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(rgba(218, 74, 194, 0.5), rgba(255, 255, 0, 0.5)), 
-        url(blue-and-pink-bookshelf.jpeg);
+        url(../image/blue-and-pink-bookshelf.jpeg);
 }
 
 form{
