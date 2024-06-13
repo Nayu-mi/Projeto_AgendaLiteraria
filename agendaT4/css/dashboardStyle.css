@@ -84,7 +84,6 @@ h3{
     box-shadow: 8px 8px 5px #444;
 }
 
-
 .dash p{
     font: small-caps 16px sans-serif;
 }
@@ -105,6 +104,37 @@ h3{
     border-radius: 10px;
 }
 
+.sessao{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+}
+.user{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btnBye{
+    background-color: #FFCBDB;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: medium;
+    font-family: "Tilt Neon", sans-serif;
+    border-radius: 10px;
+}
+.btnDel{
+    border: none;
+    background-color: #e4e4d0;
+    cursor: pointer;
+    position: relative;
+}
+
+
 /*rodapé*/
 .footer{
     margin-top: auto;
@@ -124,7 +154,7 @@ h3{
 
 #menuToggle {
     display: block;
-    position: relative;
+    position: fixed;
     top: 50px;
     left: 50px;
     z-index: 1;
@@ -229,6 +259,13 @@ h3{
 
 /* Media query para dispositivos com largura máxima de 768px (tablet) */
 @media only screen and (max-width: 768px) {
+    #menuToggle {
+        display: block;
+        position: relative;
+    }
+    .sessao{
+        position: relative;
+    }
     .central {
         padding: 30px; 
         max-width: 100%; 

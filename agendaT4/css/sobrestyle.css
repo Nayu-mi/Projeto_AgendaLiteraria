@@ -53,6 +53,30 @@ h4{
     margin-left: 25px;
 }
 
+.sessao{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+}
+.user{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btnBye{
+    background-color: #FFCBDB;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: medium;
+    font-family: "Tilt Neon", sans-serif;
+    border-radius: 10px;
+}
+
 /*rodapé*/
 .footer{
     margin-top: auto;
@@ -72,7 +96,7 @@ h4{
 
 #menuToggle {
     display: block;
-    position: relative;
+    position: fixed;
     top: 50px;
     left: 50px;
     z-index: 1;
@@ -179,6 +203,13 @@ h4{
 
 /* Media query para dispositivos com largura máxima de 768px (exemplo de tablet) */
 @media only screen and (max-width: 768px) {
+    #menuToggle {
+        display: block;
+        position: relative;
+    }
+    .sessao{
+        position: relative;
+    }
     .central {
         padding: 30px; /* Reduzir o padding */
     }
@@ -190,6 +221,7 @@ h4{
     h3 {
         font-size: 30px; /* Reduzir o tamanho da fonte do título */
         margin-left: 0; /* Remover a margem esquerda do título */
+        margin-bottom: -11px;
     }
 
     p {
@@ -200,6 +232,13 @@ h4{
 
 /* Media query para dispositivos com largura máxima de 480px (exemplo de dispositivo móvel) */
 @media only screen and (max-width: 480px) {
+    #menuToggle {
+        display: block;
+        position: relative;
+    }
+    .sessao{
+        position: relative;
+    }
     .central {
         padding: 20px; /* Reduzir ainda mais o padding */
     }
@@ -210,6 +249,7 @@ h4{
 
     h3 {
         font-size: 24px; /* Reduzir ainda mais o tamanho da fonte do título */
+        margin-bottom: -10px;
     }
 
     p {

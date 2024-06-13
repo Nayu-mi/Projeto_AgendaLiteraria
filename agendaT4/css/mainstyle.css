@@ -4,20 +4,30 @@
     margin: 0;
     padding: 0;
 }
-html{
+html {
     height: 100%;
     min-height: 100%;
 }
 
 body{
     font-family: "Tilt Neon", sans-serif;
-    background-color: #94A684;
+    background-color: #94a684;
     line-height: 1.5;
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+h3{
+    color: 	#fff;
+    text-align: center;
+    font-size: 30px;
+}
+.h4{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 180px;
+}
 .central{
     padding: 50px;
     max-width: 1300px;
@@ -26,32 +36,72 @@ body{
 }
 
 .box{
-    background-color: #E4E4D0;
-    max-width: 900px;
-    margin: 0 auto;
     padding: 40px;
-    border-radius: 8px;
-}
-
-h3{
-    color: #FFEEF4;
-    font-size: 60px;
-    margin-bottom: -20px;
+    margin: 0 auto;
+    max-width: 1000px;
     text-align: center;
 }
 
-p{
-    color: #000;
-    font-size: 16px;
-    text-align: justify;
-    margin-bottom: 20px;
+/*ul */
+#booksList{
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+/*li*/
+.Livros{
+    list-style: none;
+    background-color: #FFEEF4;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 'nome image'
+    'autor image';
+    text-align: left;
 }
 
-h4{
-    color: #005c49;
-    font-size: 20px;
-    margin-left: 25px;
+.Livros > h4{
+    grid-area: nome;
+    margin-bottom: 0px;
+    color: #000;
+    font: small-caps 20px sans-serif;
 }
+.Livros > p{
+    grid-area: autor;
+    margin: 0;
+    margin-top: -18px;
+    font: small-caps 15px sans-serif;
+}
+
+.Livros > img{
+    max-width: 100px;
+    grid-area: image;
+    border: 5px ridge #000;
+    padding: 1px;
+    box-shadow: 8px 8px 5px #444;
+}
+
+#searchBar{
+    width: 100%;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #94a684;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+#searchWrapper{
+    position: relative;
+}
+/* não funciona =(
+#searchWrapper::after{
+    content: '\1F50D';
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+*/
 
 .sessao{
     position: fixed;
@@ -77,6 +127,13 @@ h4{
     border-radius: 10px;
 }
 
+.back{
+    text-decoration: none;
+    color: #fff;
+    background-color: #FFCBDB;
+    padding: 10px;
+    border-radius: 10px;
+}
 /*rodapé*/
 .footer{
     margin-top: auto;
@@ -199,10 +256,7 @@ h4{
 }
 /* Fim do menu toggle */
 
-/* Estilos padrão */
-
-/* Media query para dispositivos com largura máxima de 768px (exemplo de tablet) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     #menuToggle {
         display: block;
         position: relative;
@@ -211,52 +265,37 @@ h4{
         position: relative;
     }
     .central {
-        padding: 30px; /* Reduzir o padding */
+        padding: 20px; 
     }
 
     .box {
-        max-width: 100%; /* Alterar a largura máxima para ocupar toda a largura disponível */
+        padding: 20px; 
     }
 
-    h3 {
-        font-size: 40px; /* Reduzir o tamanho da fonte do título */
-        margin-left: 0; /* Remover a margem esquerda do título */
-        margin-bottom: -11px;
+    #booksList {
+        grid-template-columns: 1fr; 
     }
 
-    p {
-        font-size: 14px; /* Reduzir o tamanho da fonte do parágrafo */
+    .Livros {
+        grid-template-columns: 1fr; 
+        text-align: center; 
     }
 
-    iframe {
-        max-width: 100%; /* Garantir que o mapa do Google se ajuste à largura do contêiner */
-        height: 300px; /* Reduzir a altura do mapa */
-    }
-}
-
-/* Media query para dispositivos com largura máxima de 480px (exemplo de dispositivo móvel) */
-@media only screen and (max-width: 480px) {
-    #menuToggle {
-        display: block;
-        position: relative;
-    }
-    .sessao{
-        position: relative;
-    }
-    .central {
-        padding: 20px; /* Reduzir ainda mais o padding */
+    .Livros > img {
+        justify-self: center; 
     }
 
-    .box {
-        padding: 20px; /* Reduzir o padding interno do box */
+    .Livros > h4,
+    .Livros > p {
+        margin: 5px 0; 
     }
 
-    h3 {
-        font-size: 30px; /* Reduzir ainda mais o tamanho da fonte do título */
-        margin-bottom: -10px;
+    #searchBar {
+        width: calc(100% - 20px);
+        margin-bottom: 10px; 
     }
 
-    p {
-        font-size: 12px; /* Reduzir ainda mais o tamanho da fonte do parágrafo */
+    .h4 {
+        margin-left: 0; 
     }
 }
