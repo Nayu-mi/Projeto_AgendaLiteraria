@@ -54,11 +54,13 @@
 
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<div class='livro'>";
+                            echo "<ul>";
+                            echo "<li>";
                             echo "<img src='" . $row['capa'] . "' alt='" . $row['nome'] . "'>";
-                            echo "<h4>" . $row['nome'] . "</h4>";
-                            echo "<p>" . $row['autor'] . "</p>";
-                            echo "</div>";
+                            echo "<p>" . $row['nome'] . - . $row['autor'] . "</p>";
+                            echo "<button class='btnDel'>&#10060;</button>";
+                            echo "</li>";
+                            echo "</ul>";
                         }
                     } else {
                         echo "<p>Nenhum livro nesta lista</p>";
