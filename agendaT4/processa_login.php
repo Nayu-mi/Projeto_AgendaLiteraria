@@ -1,46 +1,45 @@
 <?php
-//inclui arquivo de conexão php
+
+// Inclui arquivo de conexão PHP
 include_once "conexao.php";
 
-//início de sessão
+// Início de sessão
 session_start();
 
-try{
-    //recebe dados do login
+try {
+    // Recebe dados do login
     $nomeuser = $_POST['usuario'];
     $senha = $_POST['senha'];
 
-    //prepara a consulta SQL para buscar o usuário
+    // Prepara a consulta SQL para buscar o usuário
     $sql = $conn->prepare("SELECT * FROM usuarios WHERE nomeuser = ?");
     $sql->bind_param("s", $nomeuser);
     $sql->execute();
     $result = $sql->get_result();
 
-    if($result->num_rows > 0){
-        //obtém os dados do usuário
+    if ($result->num_rows > 0) {
+        // Obtém os dados do usuário
         $user = $result->fetch_assoc();
 
-        //verficca se a senha esta correta
-        if(password_verify($senha, $user['senha'])){
-            //sucesso no login
+        // Verifica se a senha está correta
+        if (password_verify($senha, $user['senha'])) {
+            // Sucesso no login
             $_SESSION['usuario'] = $user['nomeuser'];
             header("Location: mainpage.php");
             exit;
-        } else{
-            //senha incorreta
-            echo "<script>
-                    alert('Senha incorreta. Tente novamente. ');
-                    window.location.href = 'login.html';
-                    </script>";
+        } else {
+            // Senha incorreta
+            $_SESSION['erro_login'] = "Senha incorreta. Tente novamente.";
+            header("Location: login.php");
+            exit;
         }
     } else {
-        //usuário não encontrado
-        echo "<script>
-                alert('Usuário não encontrado. Tente novamente.');
-                window.location.href = 'login.html';
-                    </script>";
+        // Usuário não encontrado
+        $_SESSION['erro_login'] = "Usuário não encontrado. Tente novamente.";
+        header("Location: login.php");
+        exit;
     }
-} catch (Exception $e){
+} catch (Exception $e) {
     echo "Erro: " . $e->getMessage();
 }
 ?>

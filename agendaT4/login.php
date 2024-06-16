@@ -1,32 +1,6 @@
 <?php
-// Iniciar a sessão
 session_start();
-
-// Verificar se o formulário de login foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar as credenciais do usuário 
-    // Se as credenciais forem válidas, armazenar um token de autenticação persistente
-    $id_usuario = obter_id_usuario($nomeuser, $password); 
-    if ($id_usuario) {
-        // Gerar um token de autenticação único e persistente
-        $token = bin2hex(random_bytes(32)); // Gera um token aleatório de 32 bytes
-
-        // Armazenar o token no banco de dados para o usuário
-        salvar_token_usuario($id_usuario, $token); // Função fictícia para salvar o token no banco de dados
-
-        // Armazenar o token na sessão para uso posterior
-        $_SESSION['auth_token'] = $token;
-
-        // Redirecionar para o dashboard após o login bem-sucedido
-        header("Location: dashboardPage.php");
-        exit();
-    } else {
-        $erro_login = "Credenciais inválidas. Tente novamente.";
-    }
-}
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,5 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        // Verificar se há uma mensagem de erro na sessão e exibir usando SweetAlert
+        <?php if (isset($_SESSION['erro_login'])): ?>
+            swal("Erro", "<?php echo $_SESSION['erro_login']; ?>", "error");
+            <?php unset($_SESSION['erro_login']); // Limpar a mensagem de erro da sessão ?>
+        <?php endif; ?>
+    </script>
 </body>
 </html>

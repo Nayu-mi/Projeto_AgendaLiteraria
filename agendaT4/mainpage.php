@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    // Redirecionar para a página de login se o usuário não estiver logado
+    header("Location: login.php");
+    exit();
+}
+
 // Conectar ao banco de dados
 $conn = new mysqli('localhost', 'root', '', 'agendalit');
 if ($conn->connect_error) {
@@ -9,6 +17,8 @@ if ($conn->connect_error) {
 $sql = "SELECT idl, nome, autor, capa, LinkPage FROM livros";
 $result = $conn->query($sql);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,14 +39,14 @@ $result = $conn->query($sql);
                 <ul id="menu">
                     <a href="mainpage.php"><li class="pular">Inicio</li></a>
                     <a href="dashboardPage.php"><li>Dashboard</li></a>
-                    <a href="sobrenos.html"><li>Sobre nós</li></a>
-                    <a href="biblioteca.html"><li>Bibliotecas de SP</li></a>
-                    <a href="alterarCadastro.html"><li>Alterar Cadastro</li></a>
+                    <a href="sobrenos.php"><li>Sobre nós</li></a>
+                    <a href="biblioteca.php"><li>Bibliotecas de SP</li></a>
+                    <a href="alterarCadastro.php"><li>Alterar Cadastro</li></a>
                 </ul>
             </div>
             <div class="sessao">
                 <form action="" class="sessao">
-                    <p class="user">Bem Vindo(a), user &nbsp; <button class="btnBye">Sair</button></p>  
+                    <p class="user">Bem Vindo(a), <?php echo htmlspecialchars($_SESSION['usuario']); ?> &nbsp; <a href="index.html" class="back">Sair</a></p>
                 </form>
             </div>
         </nav>
@@ -67,7 +77,7 @@ $result = $conn->query($sql);
         </div>
         <br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="index.html" class="back">Voltar</a>
+
         <br><br>
     </main>
     <footer class="footer">
@@ -97,3 +107,4 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
+

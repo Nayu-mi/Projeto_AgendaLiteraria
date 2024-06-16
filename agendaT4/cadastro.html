@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre-se</title>
     <link rel="stylesheet" href="css/cadastro.css">
-    <!--<script src="cadscript.js" defer></script>-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
@@ -24,13 +21,13 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="">
+                            <label for="nomeCompleto">
                                 Nome completo: <br>
                                 <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Digite seu Nome">
                             </label>
                         </div>
                         <div class="col">
-                            <label for="">
+                            <label for="dataNascimento">
                                 Data de nascimento: <br>
                                 <input type="date" id="dataNascimento" name="dataNascimento"> 
                             </label>
@@ -39,13 +36,13 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="">
+                            <label for="username">
                                 Nome de usuário: <br>
                                 <input type="text" id="username" name="username" placeholder="Digite um nome de usuario">
                             </label>
                         </div>
                         <div class="col">
-                            <label for="">
+                            <label for="email">
                                 Endereço de e-mail: <br>
                                 <input type="email" id="email" name="email" placeholder="Digite seu email">
                             </label>
@@ -54,17 +51,16 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="" class="senha">
+                            <label for="senha">
                                 Senha: <br>
                                 <input type="password" name="senha" class="senha-olho" placeholder="Digite sua senha" id="senha">
                                 <i class="fa-solid fa-eye" onclick="togglePasswordVisibility()"></i>
                             </label>
                         </div>
                         <div class="col">
-                            <label for="">
+                            <label for="confirmaSenha">
                                 Confirme sua Senha: <br>
-                                <input type="password" class="senha-olho" placeholder="Confirme sua senha" id="senha">
-                                
+                                <input type="password" class="senha-olho" placeholder="Confirme sua senha" id="confirmaSenha">
                             </label>
                         </div>
                     </div>
@@ -73,7 +69,7 @@
                         <div class="col">
                             Você aceita nossos termos?<br>
                             <label class="checkbox-container">Aceito os termos
-                                <input type="checkbox">
+                                <input type="checkbox" id="aceitaTermos">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -93,5 +89,37 @@
     </main>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            // Pegando os valores dos campos
+            const nomeCompleto = document.getElementById('nomeCompleto').value.trim();
+            const dataNascimento = document.getElementById('dataNascimento').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+            const confirmaSenha = document.getElementById('confirmaSenha').value.trim();
+            const aceitaTermos = document.getElementById('aceitaTermos').checked;
+
+            // Verificando se todos os campos estão preenchidos
+            if (!nomeCompleto || !dataNascimento || !username || !email || !senha || !confirmaSenha || !aceitaTermos) {
+                event.preventDefault();  // Impede o envio do formulário
+                swal("Erro", "Por favor, preencha todos os campos e aceite os termos.", "error");
+                return;
+            }
+
+            // Verificando se as senhas coincidem
+            if (senha !== confirmaSenha) {
+                event.preventDefault();  // Impede o envio do formulário
+                swal("Erro", "As senhas não coincidem.", "error");
+                return;
+            }
+        });
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('senha');
+            const passwordFieldType = passwordField.getAttribute('type');
+            passwordField.setAttribute('type', passwordFieldType === 'password' ? 'text' : 'password');
+        }
+    </script>
 </body>
 </html>
