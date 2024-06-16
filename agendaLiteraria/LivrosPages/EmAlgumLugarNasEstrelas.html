@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Algum Lugar Nas Estrelas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainpage.php"><li class="pular">Inicio</li></a>
+                    <a href="../dashboardPage.php"><li>Dashboard</li></a>
+                    <a href="../sobrenos.php"><li>Sobre nós</li></a>
+                    <a href="../biblioteca.php"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/EmAlgumLugarNasEstrelas.png" alt="Além da Porta Sussurrante">
+                    <h2>Em Algum Lugar nas Estrelas</h2>
+                    <h3>Clare Vanderpool</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Um romance intenso sobre a difícil arte de crescer em um mundo <br> 
+                        que nem sempre parece satisfeito com a nossa presença. <br>
+                        Pelo menos é desse jeito que as coisas têm acontecido para Jack Baker.
+                    </h5>
+                    <p>
+                        A Segunda Guerra Mundial estava no fim, mas ele não tinha motivos para comemorar. Sua mãe morreu e seu pai... 
+                        bem, seu pai nunca demonstrou se preocupar muito com o filho. Jack é então levado para um internato no Maine 
+                        (o mesmo estado onde vivem Stephen King e boa parte de seus personagens). 
+                        <br>
+                        O colégio militar, o oceano que ele nunca tinha visto, a indiferença dos outros alunos: tudo aquilo faz Jack se sentir pequeno.  
+                        Até ele conhecer o enigmático Early Auden. Early, um nome que poderia ser traduzido como precoce, é uma descrição muito adequada para 
+                        um prodígio como ele, que decifra casas decimais do número Pi como se lesse uma odisseia. 
+                        <br>
+                        Mas, por trás de sua genialidade, há uma enorme dificuldade de se relacionar com o mundo e de lidar com seus sentimentos e 
+                        com as pessoas ao seu redor.Obsessivo, Early Auden tem regras específicas sobre que músicas deve ouvir em 
+                        cada dia da semana: Louis Armstrong às segundas; Sinatra às quartas; Glenn Miller às sextas; Mozart aos domingos e Billie Holiday 
+                        sempre que estiver chovendo. 
+                        <br>
+                        Seu comportamento é um dos muitos indícios da síndrome de Asperger, uma forma branda de autismo que só 
+                        seria descoberta muito tempo depois da Segunda Guerra, e que inspirou personagens já clássicos como o Sr. Spock (Star Trek), 
+                        o Dr. House e Sheldon Cooper (The Big Bang Theory).Quando chegam as festas de fim de ano, a escola fica vazia. 
+                        Todos os alunos voltam para casa, para celebrar com suas famílias. 
+                        Todos, menos Jack e Early. <br>
+                        Os dois aproveitam a solidão involuntária e partem em uma jornada ao encontro do lendário Urso Apalache. 
+                        Nessa grande aventura, vão encontrar piratas, seres fantásticos e até, quem sabe, uma maneira de trazer os mortos de volta &ndash; ainda
+                        que talvez do que Jack mais precise seja aprender a deixá-los em paz.
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="7">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="7">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="7">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="mensagem-sucesso" style="display: none; color: green; text-align: center; margin-top: 20px;">
+                    Livro adicionado à lista com sucesso!
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('.adicionar-livro-form').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: '../adicionar_livro.php',
+                    type: 'post',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        $('#mensagem-sucesso').show().delay(3000).fadeOut();
+                    },
+                    error: function() {
+                        alert('Erro ao adicionar o livro. Tente novamente.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Sol Também É Uma Estrela</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainpage.php"><li class="pular">Inicio</li></a>
+                    <a href="../dashboardPage.php"><li>Dashboard</li></a>
+                    <a href="../sobrenos.php"><li>Sobre nós</li></a>
+                    <a href="../biblioteca.php"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/OSolTambemEUmaEstrela.png" alt="O Sol Também é uma Estrela">
+                    <h2>O Sol Também é uma Estrela</h2>
+                    <h3>Nicola Yoon</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Poético e envolvente, cheio de esperança, dor... e toda a vibração universal do coração humano.
+                    </h5>
+                    <p>
+                        <strong>Natasha:</strong>
+                        Sou uma garota que acredita na ciência e nos fatos. Não acredito na sorte. Nem no destino. 
+                        Muito menos em sonhos que nunca se tornarão realidade. Não sou o tipo de garota que se apaixona perdidamente por um 
+                        garoto bonito que encontra numa rua movimentada de Nova York. Não quando minha família está a 12 horas de ser deportada 
+                        para a Jamaica. Apaixonar-me por ele não pode ser a minha história.
+                        <br>
+                        <strong>Daniel:</strong>
+                        Sou um bom filho e um bom aluno. Sempre estive à altura das grandes expectativas dos meus pais. Nunca me permiti ser o poeta. 
+                        Nem o sonhador. Mas, quando a vi, esqueci de tudo isso. Há alguma coisa em Natasha que me faz pensar que o destino tem 
+                        algo extraordinário reservado para nós dois.
+                        <br>
+                        <strong>O Universo:</strong>
+                        Cada momento de nossas vidas nos trouxe a este instante único. Há um milhão de futuros diante de nós. 
+                        Qual deles se tornará realidade?
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="22">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="22">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="22">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="mensagem-sucesso" style="display: none; color: green; text-align: center; margin-top: 20px;">
+                    Livro adicionado à lista com sucesso!
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('.adicionar-livro-form').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: '../adicionar_livro.php',
+                    type: 'post',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        $('#mensagem-sucesso').show().delay(3000).fadeOut();
+                    },
+                    error: function() {
+                        alert('Erro ao adicionar o livro. Tente novamente.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

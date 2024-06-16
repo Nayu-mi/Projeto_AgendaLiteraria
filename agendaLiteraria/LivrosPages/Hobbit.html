@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Hobbit</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+ <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainpage.php"><li class="pular">Inicio</li></a>
+                    <a href="../dashboardPage.php"><li>Dashboard</li></a>
+                    <a href="../sobrenos.php"><li>Sobre nós</li></a>
+                    <a href="../biblioteca.php"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/OHobbit.png" alt="O Hobbit">
+                    <h2>O Hobbit</h2>
+                    <h3>J. R. R. Tolken</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Mais de 80 anos após a sua publicação, o livro que antecede os ocorridos <br> em O Senhor dos Anéis continua arrebatando fãs de todas as idades
+                    </h5>
+                    <p>
+                        Bilbo Bolseiro era um dos mais respeitáveis hobbits de todo o Condado até que, um dia, o mago Gandalf bate à sua porta. A partir de então, toda sua vida 
+                        pacata e campestre soprando anéis de fumaça com seu belo cachimbo começa a mudar. Ele é convocado a participar de uma aventura por ninguém menos do que Thorin 
+                        Escudo-de-Carvalho, um príncipe do poderoso povo dos Anãos.
+                        <br>
+                        Esta jornada fará Bilbo, Gandalf e 13 anãos atravessarem a Terra-média, passando por inúmeros perigos, sejam eles, os imensos trols, as Montanhas Nevoentas 
+                        infestadas de gobelins ou a muito antiga e misteriosa Trevamata, até chegarem (se conseguirem) na Montanha Solitária. Lá está um incalculável tesouro, mas há um porém. 
+                        Deitado em cima dele está Smaug, o Dourado, um dragão malicioso que... bem, você terá que ler e descobrir.
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="10">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="10">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="10">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="mensagem-sucesso" style="display: none; color: green; text-align: center; margin-top: 20px;">
+                    Livro adicionado à lista com sucesso!
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('.adicionar-livro-form').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: '../adicionar_livro.php',
+                    type: 'post',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        $('#mensagem-sucesso').show().delay(3000).fadeOut();
+                    },
+                    error: function() {
+                        alert('Erro ao adicionar o livro. Tente novamente.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

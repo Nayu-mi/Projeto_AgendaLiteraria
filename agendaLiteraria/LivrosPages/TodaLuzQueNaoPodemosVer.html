@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toda Luz Que Não Podemos Ver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainpage.php"><li class="pular">Inicio</li></a>
+                    <a href="../dashboardPage.php"><li>Dashboard</li></a>
+                    <a href="../sobrenos.php"><li>Sobre nós</li></a>
+                    <a href="../biblioteca.php"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/TodaLuzQueNaoPodemosVer.png" alt="Toda Luz que não Podemos Ver">
+                    <h2>Toda Luz que não Podemos Ver</h2>
+                    <h3>Anthony Doerr</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Um romance sobre autopreservação e generosidade em meio às atrocidades de uma guerra que jamais deve ser esquecida.
+                    </h5>
+                    <p>
+                        Marie-Laure vive em Paris, perto do Museu de História Natural, onde seu pai é o chaveiro responsável por cuidar de 
+                        milhares de fechaduras. Quando a menina fica cega, aos seis anos, o pai constrói uma maquete em miniatura do bairro onde
+                        moram para que ela seja capaz de memorizar os caminhos. Na ocupação nazista em Paris, pai e filha fogem para a cidade 
+                        de Saint-Malo e levam consigo o que talvez seja o mais valioso tesouro do museu.
+                        <br>
+                        Em uma região de minas na Alemanha, o órfão Werner cresce com a irmã mais nova, encantado pelo rádio que certo dia 
+                        encontram em uma pilha de lixo. Com a prática, acaba se tornando especialista no aparelho, talento que lhe vale uma vaga 
+                        em uma escola nazista e, logo depois, uma missão especial: descobrir a fonte das transmissões de rádio responsáveis pela 
+                        chegada dos Aliados na Normandia. Cada vez mais consciente dos custos humanos de seu trabalho, o rapaz é enviado então 
+                        para Saint-Malo, onde seu caminho cruza o de Marie-Laure, enquanto ambos tentam sobreviver à Segunda Guerra Mundial.
+                        <br>
+                        Uma história arrebatadora contada de forma fascinante. Com incrível habilidade para combinar lirismo e uma observação 
+                        atenta dos horrores da guerra, o premiado autor Anthony Doerr constrói, em Toda luz que não podemos ver, um tocante 
+                        romance sobre o que há além do mundo visível.
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="23">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="23">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="23">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="mensagem-sucesso" style="display: none; color: green; text-align: center; margin-top: 20px;">
+                    Livro adicionado à lista com sucesso!
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('.adicionar-livro-form').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: '../adicionar_livro.php',
+                    type: 'post',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        $('#mensagem-sucesso').show().delay(3000).fadeOut();
+                    },
+                    error: function() {
+                        alert('Erro ao adicionar o livro. Tente novamente.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

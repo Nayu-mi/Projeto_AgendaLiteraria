@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Mar Sem Estrelas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainpage.php"><li class="pular">Inicio</li></a>
+                    <a href="../dashboardPage.php"><li>Dashboard</li></a>
+                    <a href="../sobrenos.php"><li>Sobre nós</li></a>
+                    <a href="../biblioteca.php"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/OMarSemEstrelas.PNG" alt="O Mar sem Estrelas">
+                    <h2>O Mar sem Estrelas</h2>
+                    <h3>Erin Morgenstern</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Da autora best-seller de O Circo da Noite, uma história de amor atemporal se desdobra em um mundo secreto debaixo da 
+                        terra ― um lugar de piratas, pintores e navios que navegam sobre um Mar Sem Estrelas
+                    </h5>
+                    <p>
+                        Quando Zachary Ezra Rawlins descobre um misterioso livro escondido na biblioteca de sua universidade, isso o leva a uma busca como nenhuma outra. 
+                        Em meio a suas inebriantes narrativas sobre prisioneiros apaixonados e cidades perdidas, ele se depara com algo impossível: 
+                        uma história de sua própria infância.
+                        <br>
+                        Determinado a obter respostas que este livro sem título ou autor se recusa a prover, Zachary deve seguir as únicas pistas que 
+                        encontra na capa &ndash; uma abelha, uma chave e uma espada. Em seu caminho, surgem duas pessoas que mudarão o curso de sua vida: 
+                        Mirabel, uma impetuosa pintora de cabelos cor-de-rosa, e Dorian, um belo e enigmático homem descalço.
+                        <br>
+                        Navegando por bailes de máscaras e sociedades secretas, este é só o início de uma missão que o levará a um estranho labirinto subterrâneo, 
+                        às margens do Mar Sem Estrelas. Um mundo maravilhoso de túneis sinuosos, cidades perdidas, amantes eternos e histórias a serem preservadas, 
+                        custe o que custar…
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="16">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="16">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="16">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="mensagem-sucesso" style="display: none; color: green; text-align: center; margin-top: 20px;">
+                    Livro adicionado à lista com sucesso!
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('.adicionar-livro-form').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: '../adicionar_livro.php',
+                    type: 'post',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        $('#mensagem-sucesso').show().delay(3000).fadeOut();
+                    },
+                    error: function() {
+                        alert('Erro ao adicionar o livro. Tente novamente.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

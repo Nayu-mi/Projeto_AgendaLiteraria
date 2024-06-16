@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Guerra Que Salvou A Minha Vida</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainpage.php"><li class="pular">Inicio</li></a>
+                    <a href="../dashboardPage.php"><li>Dashboard</li></a>
+                    <a href="../sobrenos.php"><li>Sobre nós</li></a>
+                    <a href="../biblioteca.php"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/GuerraQueSalvouMinhaVida.png" alt="A Guerra que Salvou a Minha Vida">
+                    <h2>A Guerra que Salvou a Minha Vida</h2>
+                    <h3>Kimberly Brubaker Bradley</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Quando a guerra começa dentro de casa
+                    </h5>
+                    <p>
+                        Ada tem dez anos (ao menos é o que ela acha). A menina nunca saiu de casa, para não envergonhar a mãe na frente dos outros. 
+                        Da janela, vê o irmão brincar, correr, pular &ndash; coisas que qualquer criança sabe fazer. Qualquer criança que não tenha 
+                        nascido com um “pé torto” como o seu. Trancada num apartamento, Ada cuida da casa e do irmão sozinha, além de ter que 
+                        escapar dos maus-tratos diários que sofre da mãe. Ainda bem que há uma guerra se aproximando.
+                        <br>
+                        Os possíveis bombardeios de Hitler são a oportunidade perfeita para Ada e o caçula Jamie deixarem Londres e partirem para o 
+                        interior, em busca de uma vida melhor.
+                        <br>
+                        Kimberly Brubaker Bradley consegue ir muito além do que se convencionou chamar “história de superação”. 
+                        Seu livro é um registro emocional e historicamente preciso sobre a Segunda Guerra Mundial. E de como os grandes conflitos 
+                        armados afetam a vida de milhões de inocentes, mesmo longe dos campos de batalha. No caso da pequena Ada, a guerra começou 
+                        dentro de casa.
+                        <br>
+                        Essa é uma das belas surpresas do livro: mostrar a guerra pelos olhos de uma menina, e não pelo ponto de vista de um 
+                        soldado, que enfrenta a fome e a necessidade de abandonar seu lar. Assim como a protagonista, milhares de crianças precisaram 
+                        deixar a família em Londres na esperança de escapar dos horrores dos bombardeios.
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="9">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="9">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form class="adicionar-livro-form" method="post">
+                            <input type="hidden" name="id_livro" value="9">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="mensagem-sucesso" style="display: none; color: green; text-align: center; margin-top: 20px;">
+                    Livro adicionado à lista com sucesso!
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('.adicionar-livro-form').on('submit', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: '../adicionar_livro.php',
+                    type: 'post',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        $('#mensagem-sucesso').show().delay(3000).fadeOut();
+                    },
+                    error: function() {
+                        alert('Erro ao adicionar o livro. Tente novamente.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

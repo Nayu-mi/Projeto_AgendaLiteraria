@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    font-family: "Tilt Neon", sans-serif;
+    line-height: 1.5;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../image/grey-and-pink-bookshelf.jpeg);
+    
+}
+form{
+    background-color: #ffcbdb; 
+    color: black;
+    padding: 50px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+fieldset{
+    border: none;
+}
+
+legend{
+    font-weight: bolder;
+    font-size: 40px;
+    margin-left: 15px;
+    text-align: center;
+    color: #005C49;
+}
+label{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    display: block;
+}
+p{
+    font-size: 20px;
+    
+}
+
+input[type="text"],input[type="email"], input[type="date"]{
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.btncad{
+    background-color: rgba(218, 74, 194, 0.5);
+    color: #005C49;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+.cadastro{
+    padding: 80px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.col {
+    flex-basis: 45%; 
+}
+
+/*media query celular
+@media screen and (max-width: 600px) {
+    .row {
+        flex-wrap: wrap; 
+    }
+
+    .col {
+        flex-basis: 100%; 
+        margin-bottom: 10px; 
+    }
+}
+fim */
+
+/* Estilizando o container do checkbox */
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* Estilizando o checkbox em si */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+/* Estilizando o visual do checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ffeef4; /*#eee*/
+    border-radius: 5px;
+}
+/* Mudança de cor do checkbox quando marcado */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #94A684; /*#2196f3*/
+}
+/* Estilizando o sinal de visto (checkmark) dentro do checkbox */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+/* Estilizando o sinal de visto (checkmark) */
+.checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.col > .senha{
+    position: relative;
+}
+.fa-eye, .fa-eye-slash{
+    position: absolute;
+    top: 65%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.senha-olho {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+
+/* Para dispositivos móveis */
+@media screen and (max-width: 600px) {
+    form {
+        padding: 20px;
+        max-width: 90%; /* Reduz a largura do formulário */
+    }
+    legend {
+        font-size: 30px;
+    }
+    label {
+        font-size: 16px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"] {
+        font-size: 14px;
+        width: 100%; 
+    }
+    .btncad {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    .cadastro {
+        padding: 40px;
+        max-width: 100%; 
+    }
+    .row {
+        flex-direction: column; 
+    }
+    .col {
+        flex-basis: 100%; 
+        margin-bottom: 10px;
+    }
+    .senha {
+        position: relative;
+    }
+    .fa-eye, .fa-eye-slash {
+        position: absolute;
+        top: 55%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    .senha-olho {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/*
+@media screen and (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+    legend {
+        font-size: 30px;
+    }
+    label {
+        font-size: 18px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"] {
+        width: 100%;
+        font-size: 14px;
+    }
+    .btncad {
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+    .cadastro {
+        padding: 40px;
+    }
+    .row {
+        flex-wrap: wrap; 
+    }
+
+    .col {
+        flex-basis: 100%; 
+        margin-bottom: 10px; 
+    }
+    .fa-eye,
+    .fa-eye-slash {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+}
+*/

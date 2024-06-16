@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    font-family: "Tilt Neon", sans-serif;
+    line-height: 1.5;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #94A684;
+}
+
+form{
+    background-color: #fce2eb; 
+    color: black;
+    padding: 50px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset{
+    border: none;
+}
+
+legend{
+    font-weight: bolder;
+    font-size: 40px;
+    color: #AEC3AE;
+    
+}
+
+label{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    display: block;
+}
+
+p{
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+input[type="text"],input[type="email"]{
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btncad{
+    background-color: #FFCBDB;
+    color: #005C49;
+    border: none;
+    padding: 10px 235px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+.cadastro{
+    padding: 80px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.col {
+    flex-basis: 45%; 
+}
+
+.back{
+    background-color: #94A684;
+    text-decoration: none;
+    color: #000;
+    font-size: 55px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/*rodapé*/
+.footer{
+    margin-top: auto;
+}
+.foot{
+    padding: 10px 0px;
+    background-color: #AEC3AE;
+    margin-bottom: 0;
+}
+.foot p{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 35px;
+}
