@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coraline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainPage/mainpage.html"><li class="pular">Inicio</li></a>
+                    <a href="../DashboardPage/dashboardPage.html"><li>Dashboard</li></a>
+                    <a href="../sobreNosPage/sobrenos.html"><li>Sobre nós</li></a>
+                    <a href="../BibliotecasPage/biblioteca.html"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/Coraline.png" alt="Coraline">
+                    <h2>Coraline</h2>
+                    <h3>Neil Gaiman</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Repleta de elementos ao mesmo tempo sombrios e lúdicos, a história conquistou crianças e adultos em todo o mundo
+                    </h5>
+                    <p>
+                        Certas portas não devem ser abertas. E Coraline descobre isso pouco tempo depois de chegar com os pais à sua nova casa, 
+                        um apartamento em um casarão antigo ocupado por vizinhos excêntricos e envolto por uma névoa insistente, um mundo de 
+                        estranhezas e magia, o tipo de universo que apenas Neil Gaiman pode criar.
+                        <br>
+                        Ao abrir uma porta misteriosa na sala de casa, a menina se depara com um lugar macabro e fascinante. 
+                        Ali, naquele outro mundo, seus outros pais são criaturas muito pálidas, com botões negros no lugar dos olhos, 
+                        sempre dispostos a lhe dar atenção, fazer suas comidas preferidas e mostrar os brinquedos mais divertidos. 
+                        Coraline enfim se sente... em casa. Mas essa sensação logo desaparece, quando ela descobre que o lugar guarda 
+                        mistérios e perigos, e a menina se dá conta de que voltar para sua verdadeira casa vai ser muito mais difícil &ndash; e 
+                        assustador &ndash; do que imaginava.
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="4">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="4">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="4">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

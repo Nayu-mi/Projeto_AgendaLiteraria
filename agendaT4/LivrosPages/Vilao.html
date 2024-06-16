@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!--Menu hamburguer e barra de pesquisa-->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox">
+    
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul id="menu">
+                    <a href="../mainPage/mainpage.html"><li class="pular">Inicio</li></a>
+                    <a href="../DashboardPage/dashboardPage.html"><li>Dashboard</li></a>
+                    <a href="../sobreNosPage/sobrenos.html"><li>Sobre nós</li></a>
+                    <a href="../BibliotecasPage/biblioteca.html"><li>Bibliotecas de SP</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <br><br>
+    <main>
+
+        <div class="central">
+
+            <div class="box">
+
+                <div class="cima">
+
+                    <img src="../capas/Vilao.png" alt="Vilão">
+                    <h2>Vilão</h2>
+                    <h3>V. E. Schwab</h3>
+
+                </div>
+
+                <div class="baixo">
+
+                    <br><br>
+                    <h4>Sinopse:</h4>
+                    <br>
+                    <h5>
+                        Victor Vale e Eli Ever são inimigos mortais desde a juventude. <br>
+                        Mas o bem e o mal nem sempre é tão claro, quando humanos extraórdinários brincam com seus superpoderes. <br> 
+                        Quem está certo e quem está errado? 
+                    </h5>
+                    <p>
+                        Victor e Eli, dois jovens brilhantes, arrogantes e solitários, se conheceram na Universidade de Merit e logo se 
+                        deram bem, identificando um no outro a mesma sagacidade e a mesma ambição. No último ano da faculdade, o interesse em 
+                        comum numa pesquisa sobre adrenalina, experiências de quase morte e poderes sobrenaturais lhes oferece uma possibilidade 
+                        antes inimaginável: de que uma pessoa, sob as condições certas, seja capaz de desenvolver habilidades extraordinárias. 
+                        No entanto, quando colocam em prática essa teoria, as coisas dão muito errado.
+                        <br>
+                        Dez anos depois, Victor foge da prisão, determinado a encontrar seu antigo amigo - agora inimigo. Para localizá-lo, 
+                        ele conta com a ajuda de uma garotinha, Sydney, cuja natureza reservada esconde uma habilidade sem igual, mas extremamente 
+                        perigosa. Enquanto isso, há dez anos Eli tem uma única missão: erradicar todas as pessoas ExtraOrdinárias que encontra, 
+                        pois são todas aberrações, afrontas a Deus - exceto sua ajudante, Serena, uma mulher enigmática e persuasiva, capaz de 
+                        impor sua vontade a qualquer um.
+                        <br>
+                        Agora, armado com poderes terríveis e movido pela lembrança da traição e da perda, Victor caça seu arqui-inimigo em 
+                        busca de vingança e de um embate no qual sabe que um dos dois deve morrer.
+                        
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <h5>Adicionar a Lista de:</h5>
+                    <div class="ldash-container">
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="25">
+                            <input type="hidden" name="lista" value="JaLi">
+                            <button type="submit" class="ldash">Já li...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="25">
+                            <input type="hidden" name="lista" value="EstouLendo">
+                            <button type="submit" class="ldash2">Estou Lendo...</button>
+                        </form>
+                        <form action="../adicionar_livro.php" method="post">
+                            <input type="hidden" name="id_livro" value="25">
+                            <input type="hidden" name="lista" value="QueroLer">
+                            <button type="submit" class="ldash3">Quero Ler...</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        
+        
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="foot">
+            <p>
+                &copy; 2024 all rights reserved
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>
