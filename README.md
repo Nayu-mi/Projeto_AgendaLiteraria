@@ -4,7 +4,7 @@
    
 2. Mova a pasta [agendaLiteraria] para dentro da pasta [htdocs] localizada na pasta do Xampp.
 
-3. Certifique-se de ter baixado o Xampp e ter criado o banco de dados com as informações anexadas abaixo:
+3. Certifique-se de ter baixado o Xampp e ter criado o banco de dados com as informações anexadas:
    [agendalitBD.pdf](https://github.com/user-attachments/files/15859945/agendalitBD.pdf).
    
 4. Após isso, o abra o Xampp Control Panel, [start] o Apache e o MySQL e execute o Apache como [admin].
